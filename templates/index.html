@@ -25,10 +25,10 @@
             {% for day in weather_data %}
                 <li>
                     <strong>Date:</strong> {{ day.date }}<br>
-                    <strong>Max Temperature:</strong> {{ day.temperature_max }}°C<br>
-                    <strong>Min Temperature:</strong> {{ day.temperature_min }}°C<br>
+                    <strong>Max Temperature:</strong> {{ day.temperature_max }}°F<br>
+                    <strong>Min Temperature:</strong> {{ day.temperature_min }}°F<br>
                     <strong>Condition:</strong> {{ day.condition }}<br>
-                    <strong>Wind Speed:</strong> {{ day.wind_speed }} kph<br>
+                    <strong>Wind Speed:</strong> {{ day.wind_speed }} mph<br>
                     <strong>Wind Direction:</strong> {{ day.wind_direction }}
                 </li>
                 <hr>
