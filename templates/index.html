@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Weather Forecast App</h1>
+    
+    <form method="POST" action="/">
+        <label for="city">Enter City Name:</label>
+        <input type="text" id="city" name="city" required>
+        <button type="submit">Get Forecast</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if weather_data %}
+        <h2>Weather Forecast for {{ request.form.city }}</h2>
+        <ul>
+            {% for day in weather_data %}
+                <li>
+                    <strong>Date:</strong> {{ day.date }}<br>
+                    <strong>Max Temperature:</strong> {{ day.temperature_max }}°C<br>
+                    <strong>Min Temperature:</strong> {{ day.temperature_min }}°C<br>
+                    <strong>Condition:</strong> {{ day.condition }}<br>
+                    <strong>Wind Speed:</strong> {{ day.wind_speed }} kph<br>
+                    <strong>Wind Direction:</strong> {{ day.wind_direction }}
+                </li>
+                <hr>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <h3>App By: Derek Forlini</h3>
+</body>
+</html>
