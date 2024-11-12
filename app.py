@@ -30,10 +30,10 @@ def index():
                         for day in data['forecast']['forecastday']:
                             weather_data.append({
                                 'date': day.get('date', 'N/A'),
-                                'temperature_max': day['day'].get('maxtemp_c', 'N/A'),
-                                'temperature_min': day['day'].get('mintemp_c', 'N/A'),
+                                'temperature_max': day['day'].get('maxtemp_f', 'N/A'),
+                                'temperature_min': day['day'].get('mintemp_f', 'N/A'),
                                 'condition': day['day']['condition'].get('text', 'N/A'),
-                                'wind_speed': day['day'].get('maxwind_kph', 'N/A'),
+                                'wind_speed': day['day'].get('maxwind_mph', 'N/A'),
                                 'wind_direction': day['day'].get('maxwind_dir', 'N/A')
                             })
                     else:
