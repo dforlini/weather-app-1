@@ -18,7 +18,7 @@ def index():
     if request.method == 'POST':
         city = request.form.get('city')
         if city:
-            url = f"http://api.weatherapi.com/v1/forecast.json?key={API_KEY}&q={city}&days=4"
+            url = f"http://api.weatherapi.com/v1/forecast.json?key={API_KEY}&q={city}&days=4&units=imperial"
             try:
                 response = requests.get(url)
                 
